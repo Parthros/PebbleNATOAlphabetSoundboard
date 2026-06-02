@@ -8,6 +8,7 @@ var font = new render.Font("Gothic-Regular", 28);
 //TODO: Can there be an in-app light-mode/dark-mode switch?
 var backgroundColor = render.makeColor(0, 0, 0);
 var textColor = render.makeColor(255, 255, 255);
+var isDarkMode = true;
 //var highlightColor = render.makeColor(150, 90, 235);
 
 var NATO_ALPHABET = [
@@ -91,4 +92,23 @@ new Button({
         }
     }
 });
+
+new Button({
+    types: ["select"],
+    onPush(down, type) {
+        console.log(`Button ${type} is ${down}`);
+        if(down){
+            if(isDarkMode) {
+                backgroundColor = render.makeColor(255, 255, 255);
+                textColor = render.makeColor(0,0,0);
+            }
+            else{
+                backgroundColor = render.makeColor(0,0,0);
+                textColor = render.makeColor(255, 255, 255);
+            }
+            showList(currentTopIndex);
+            isDarkMode = !isDarkMode;
+        }
+    }
+})
 showList();
