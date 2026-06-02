@@ -1,10 +1,15 @@
 {
     "author": "Brophy",
-    "dependencies": {},
     "keywords": [
         "pebble-app"
     ],
     "name": "nato-alphabet",
+    "scripts":{
+        "compile": "node esbuild.config.js",
+        "pebble-build": "pebble build",
+        "pebble-install": "pebble install --emulator emery --logs",
+        "build": "npm run compile && pebble wipe && npm run pebble-build && npm run pebble-install"
+    },
     "pebble": {
         "displayName": "NATO Alphabet Soundboard",
         "enableMultiJS": true,
@@ -25,5 +30,10 @@
             "watchface": false
         }
     },
-    "version": "1.0.1"
+    "version": "1.0.1",
+    "devDependencies": {
+        "@moddable/typings": "^8.1.1",
+        "esbuild": "^0.28.0",
+        "typescript": "^6.0.3"
+    }
 }
