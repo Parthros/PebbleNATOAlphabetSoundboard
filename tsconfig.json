@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2025",
+    "lib": ["es2025"],
+    "outDir": "./src",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "declaration": false,
+    "sourceMap": false,
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "commodetto/*": ["./node_modules/@moddable/typings/commodetto/*"],
+      "pebble/*": ["./node_modules/@moddable/typings/pebble/*"]
+    },
+    "types": [
+			"./node_modules/@moddable/typings/pebble/global",
+			"./node_modules/@moddable/typings/pebble/piu",
+			"./node_modules/@moddable/typings/pebble/poco",
+			"./node_modules/@moddable/typings/easing",
+			"./node_modules/@moddable/typings/piu/MC",
+			"./node_modules/@moddable/typings/piu/MC-types",
+			"./node_modules/@moddable/typings/global"
+		]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"],
+}
