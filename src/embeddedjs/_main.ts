@@ -1,6 +1,9 @@
 // src/embeddedjs/file.ts
 import Poco from "commodetto/Poco";
 import Button from "pebble/button";
+import Message from "pebble/message";
+
+
 console.log("Hello, Watchface.");
 var render = new Poco(screen);
 var font = new render.Font("Gothic-Regular", 28);
@@ -110,5 +113,35 @@ new Button({
             isDarkMode = !isDarkMode;
         }
     }
-})
+});
+
+const message = new Message({
+    keys: ["BackgroundColor", "ForegroundColor"],
+    onReadable() {
+        console.log("Received message from phone.");
+        var messages = message.read();
+        messages.forEach((value, key) => {
+            console.log(`Received message with key: ${key} and value: ${value}`);
+            console.log("Current background color: " + backgroundColor);
+            console.log("Current text color: " + textColor);
+            var num = Number(value); // Your Pebble color number
+            // Extract channels from a standard 24-bit RGB integer (0xRRGGBB)
+            const r = (num >> 16) & 0xFF; // Shift out green and blue, mask red
+            const g = (num >> 8) & 0xFF;  // Shift out blue, mask green
+            const b = num & 0xFF;         // Mask blue
+            switch(key) {
+                case "BackgroundColor":
+                    backgroundColor = render.makeColor(r, g, b);
+                    break;
+                case "ForegroundColor":
+                    textColor = render.makeColor(r, g, b);
+                    break;
+            }
+            console.log("Updated background color: " + backgroundColor);
+            console.log("Updated text color: " + textColor);
+        });
+
+        showList(currentTopIndex);
+    },
+});
 showList();

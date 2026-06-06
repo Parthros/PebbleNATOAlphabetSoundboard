@@ -4,7 +4,7 @@
         "pebble-app"
     ],
     "name": "nato-alphabet",
-    "scripts":{
+    "scripts": {
         "compile": "node esbuild.config.js",
         "pebble-build": "pebble build",
         "pebble-install": "pebble install --emulator emery --logs",
@@ -14,7 +14,8 @@
         "displayName": "NATO Alphabet Soundboard",
         "enableMultiJS": true,
         "messageKeys": [
-            "dummy"
+            "BackgroundColor",
+            "ForegroundColor"
         ],
         "projectType": "moddable",
         "resources": {
@@ -24,6 +25,9 @@
         "targetPlatforms": [
             "emery",
             "gabbro"
+        ],
+        "capabilities": [
+            "configurable"
         ],
         "uuid": "e8646082-1635-45a9-950f-2238ea78e861",
         "watchapp": {
@@ -35,5 +39,8 @@
         "@moddable/typings": "^8.1.1",
         "esbuild": "^0.28.0",
         "typescript": "^6.0.3"
+    },
+    "dependencies": {
+        "@rebble/clay": "1.0.8"
     }
 }
