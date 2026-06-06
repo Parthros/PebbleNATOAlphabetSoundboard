@@ -7,7 +7,11 @@ var clay = new Clay(clayConfig, null, {
   autoExtractUserKeys: false,
   userData: {
     // Explicit empty function overrides to keep Clay from triggering the native proxy send
-    onSave: function() {} 
+    onSave: function() {
+      console.log("Saving settings to local storage.");
+      localStorage.setItem("BackgroundColor", clay.getItem("BackgroundColor"));
+      localStorage.setItem("ForegroundColor", clay.getItem("ForegroundColor"));
+    } 
   }
 });
 

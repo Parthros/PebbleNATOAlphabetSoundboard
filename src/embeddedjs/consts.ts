@@ -1,0 +1,2 @@
+export const DEFAULT_BACKGROUND_COLOR = 255;
+export const DEFAULT_TEXT_COLOR = 0;

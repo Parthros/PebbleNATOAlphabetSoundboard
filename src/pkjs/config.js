@@ -2,12 +2,12 @@ module.exports = [
   {
     "type": "heading",
     "id": "AppConfig",
-    "defaultValue": "App Configuration"
+    "defaultValue": "NATO Alphabet Soundboard Configuration"
   },
   {
     "type": "text",
     "id": "IntroText",
-    "defaultValue": "Here is some introductory text."
+    "defaultValue": "Adjust the colors of the soundboard here."
   },
   {
     "type": "section",
