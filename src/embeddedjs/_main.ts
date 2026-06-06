@@ -50,6 +50,7 @@ function showList(startIndex = 0) {
         return;
     render.begin();
     render.fillRectangle(backgroundColor, 0, 0, render.width, render.height);
+    //TODO: Let's make it taller, so we only have 7 rows per screen.  Touch-friendly is a priority for stretch goals.
     const height = font.height;
     let currentHeight = 2;
     let columnIndex = 0;
