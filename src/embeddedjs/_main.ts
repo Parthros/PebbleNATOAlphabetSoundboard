@@ -146,16 +146,16 @@ const message = new Message({
             // and leave the last 8 bits as they are, which gives us 00000000 00000000 11111111, which is just the blue value.
 
             // if this is to confusing for you, you can do:
-            const numInString = num.toString(2).padStart(24, '0').substring(0, 24); // Convert to string and pad with zeros if necessary
-            console.log("numInString: " + numInString);
-            const r = parseInt(numInString.substring(0, 8),2); //get first 8 digits.
-            const g = parseInt(numInString.substring(8, 16),2); //get middle 8 digits.
-            const b = parseInt(numInString.substring(16, 24),2); //get last 8 digits.
+            // const numInString = num.toString(2).padStart(24, '0').substring(0, 24); // Convert to string and pad with zeros if necessary
+            // console.log("numInString: " + numInString);
+            // const r = parseInt(numInString.substring(0, 8),2); //get first 8 digits.
+            // const g = parseInt(numInString.substring(8, 16),2); //get middle 8 digits.
+            // const b = parseInt(numInString.substring(16, 24),2); //get last 8 digits.
 
 
-            // const r = (num >> 16) & 0xFF; 
-            // const g = (num >> 8) & 0xFF; 
-            // const b = num & 0xFF;
+            const r = (num >> 16) & 0xFF; 
+            const g = (num >> 8) & 0xFF; 
+            const b = num & 0xFF;
             switch(key) {
                 case "BackgroundColor":
                     backgroundColor = render.makeColor(r, g, b);
