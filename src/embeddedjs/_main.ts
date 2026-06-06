@@ -9,7 +9,7 @@ import { DEFAULT_BACKGROUND_COLOR, DEFAULT_TEXT_COLOR } from "./consts";
 console.log("Hello, Watchface.");
 var render = new Poco(screen);
 
-var font = new render.Font("Gothan-Regular", 28);
+var font = new render.Font("Gothic-Regular", 28);
 
 var backgroundColor = DEFAULT_BACKGROUND_COLOR;
 var textColor = DEFAULT_TEXT_COLOR;
